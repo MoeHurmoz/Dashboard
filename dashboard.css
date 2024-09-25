@@ -1,0 +1,213 @@
+:root {
+  font-family: sans-serif;
+  text-transform: capitalize;
+
+  /* COLORS */
+  --bg-color-1: #001;
+  --bg-color-2: #123;
+  --text-color: #ffffff;
+  --primary-color: #0481ff;
+  --secondary-color: #ffffff55;
+  --success-color: #008000;
+  --warning-color: #ffd700;
+  --danger-color: #a00;
+
+  /* BORDERS */
+  --border-radius-s: 6px;
+  --border-radius-m: 8px;
+
+  /* TRANSITIONS */
+  --transition-duration: 0.3s;
+
+  /* ========== [ COMPUTED ] ========== */
+  /* FONT SIZES */
+  --font-size-xl: clamp(30px, 4vw, 40px);
+  --font-size-l: clamp(20px, 3vw, 30px);
+  --font-size-m: clamp(14px, 1.8vw, 18px);
+
+  /* DIMENSIONS */
+  --padding-l: clamp(10px, 2vw, 20px);
+  --padding-m: clamp(7px, 1vw, 10px);
+  --padding-s: clamp(3px, 0.6vw, 6px);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+}
+
+body {
+  background-color: var(--bg-color-1);
+  font-size: var(--font-size-m);
+}
+
+a {
+  display: block;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* COMMON EFFECTS */
+.menu li:not(.profile) > a.active,
+.menu li:not(.profile) > a:hover,
+.content .data-info .box:hover,
+.content > table td:hover {
+  background-color: var(--secondary-color);
+  cursor: pointer;
+}
+
+/* ======================== [ MAIN ] ======================== */
+main {
+  display: flex;
+}
+
+/* ==================== [ MENU SECTION ] ==================== */
+.menu {
+  background-color: var(--bg-color-2);
+  position: sticky;
+  top: 0;
+  width: clamp(45px, 6vw, 60px);
+  height: 100vh;
+  padding: var(--padding-l);
+  overflow: hidden;
+  transition: width var(--transition-duration);
+}
+
+.menu:hover {
+  width: clamp(320px, 38vw, 380px);
+}
+
+.menu > ul {
+  height: 95%;
+  position: relative;
+}
+
+.menu li:not(.profile) > a {
+  padding: var(--padding-m);
+  margin: 10px 0;
+  border-radius: var(--border-radius-m);
+  display: flex;
+  align-items: center;
+  column-gap: var(--font-size-xl);
+}
+
+.menu li:not(.profile) > a > p {
+  flex-shrink: 0;
+}
+
+.menu .profile > a {
+  display: flex;
+  align-items: center;
+  column-gap: var(--font-size-l);
+  margin-bottom: 20px;
+}
+
+.menu .profile .img-box {
+  flex-shrink: 0;
+  width: clamp(35px, 5vw, 50px);
+  height: clamp(35px, 5vw, 50px);
+  border: clamp(1px, 0.3vw, 3px) solid var(--text-color);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.menu .profile .img-box > img {
+  width: 100%;
+}
+
+.menu .log-out {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.menu .log-out > a {
+  background-color: var(--danger-color);
+}
+
+.menu li > a > i {
+  font-size: var(--font-size-l);
+}
+
+/* =================== [ CONTENT SECTION ] =================== */
+.content {
+  width: 100%;
+  margin: 10px;
+}
+
+.content .title-info {
+  background-color: var(--primary-color);
+  margin: 10px 0;
+  padding: var(--padding-m);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: var(--border-radius-m);
+}
+
+.content .data-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.content .data-info .box {
+  background-color: var(--bg-color-2);
+  flex-basis: clamp(140px, 15vw, 150px);
+  height: clamp(100px, 15vw, 150px);
+  flex-grow: 1;
+  border-radius: var(--border-radius-m);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.content .data-info .box > i {
+  font-size: var(--font-size-xl);
+}
+
+.content .data-info .box .data {
+  text-align: center;
+}
+
+.content .data-info .box .data > span {
+  font-size: var(--font-size-l);
+}
+
+.content > table {
+  width: 100%;
+  text-align: center;
+  border-spacing: 8px;
+}
+
+.content > table th,
+.content > table td {
+  background-color: var(--bg-color-2);
+  height: 40px;
+  border-radius: var(--border-radius-m);
+}
+
+.content > table th {
+  background-color: var(--primary-color);
+}
+
+.content > table .price,
+.content > table .count {
+  padding: var(--padding-s);
+  border-radius: var(--border-radius-s);
+}
+
+.content > table .price {
+  background-color: var(--success-color);
+}
+
+.content > table .count {
+  background-color: var(--warning-color);
+  color: #000000;
+}

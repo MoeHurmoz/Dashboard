@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./dashboard.css" />
+  </head>
+
+  <body>
+    <main>
+      <section class="menu">
+        <ul>
+          <li class="profile">
+            <a href="#">
+              <div class="img-box">
+                <img src="./assets/user-200x300.webp" alt="profile pic" />
+              </div>
+              <h2>Abdurahman</h2>
+            </a>
+          </li>
+          <li>
+            <a class="active" href="#">
+              <i class="fas fa-home"></i>
+              <p>Dashboard</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-user-group"></i>
+              <p>Clients</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-table"></i>
+              <p>Products</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-chart-pie"></i>
+              <p>Charts</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-pen"></i>
+              <p>Posts</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-star"></i>
+              <p>Favorite</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-cog"></i>
+              <p>Settings</p>
+            </a>
+          </li>
+          <li class="log-out">
+            <a href="#">
+              <i class="fas fa-sign-out"></i>
+              <p>Log Out</p>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="content">
+        <div class="title-info">
+          <p>Dashboard</p>
+          <i class="fas fa-chart-bar"></i>
+        </div>
+
+        <div class="data-info">
+          <div class="box">
+            <i class="fas fa-user-group"></i>
+            <div class="data">
+              <p>Clients</p>
+              <span>1320</span>
+            </div>
+          </div>
+
+          <div class="box">
+            <i class="fas fa-pen"></i>
+            <div class="data">
+              <p>Posts</p>
+              <span>34</span>
+            </div>
+          </div>
+
+          <div class="box">
+            <i class="fas fa-table"></i>
+            <div class="data">
+              <p>Products</p>
+              <span>654</span>
+            </div>
+          </div>
+
+          <div class="box">
+            <i class="fas fa-dollar"></i>
+            <div class="data">
+              <p>Revenue</p>
+              <span>$143</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="title-info">
+          <p>Products</p>
+          <i class="fas fa-table"></i>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Price</th>
+              <th>Count</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>TV LG</td>
+              <td><span class="price">$887</span></td>
+              <td><span class="count">123</span></td>
+            </tr>
+            <tr>
+              <td>TV Samsung</td>
+              <td><span class="price">$599</span></td>
+              <td><span class="count">1923</span></td>
+            </tr>
+            <tr>
+              <td>MacBook Pro</td>
+              <td><span class="price">$1199</span></td>
+              <td><span class="count">648</span></td>
+            </tr>
+            <tr>
+              <td>MateBook D14</td>
+              <td><span class="price">$1099</span></td>
+              <td><span class="count">481</span></td>
+            </tr>
+            <tr>
+              <td>iPhone 14 Pro</td>
+              <td><span class="price">$999</span></td>
+              <td><span class="count">900</span></td>
+            </tr>
+            <tr>
+              <td>Cozon RX400</td>
+              <td><span class="price">$1398</span></td>
+              <td><span class="count">1643</span></td>
+            </tr>
+            <tr>
+              <td>Dido Spark +</td>
+              <td><span class="price">$1198</span></td>
+              <td><span class="count">2000</span></td>
+            </tr>
+            <tr>
+              <td>HP Deskjet</td>
+              <td><span class="price">$199</span></td>
+              <td><span class="count">27</span></td>
+            </tr>
+            <tr>
+              <td>apple airpods pro</td>
+              <td><span class="price">$599</span></td>
+              <td><span class="count">362</span></td>
+            </tr>
+            <tr>
+              <td>huawei freebuds pro</td>
+              <td><span class="price">$550</span></td>
+              <td><span class="count">427</span></td>
+            </tr>
+            <tr>
+              <td>HDMI cable</td>
+              <td><span class="price">$15</span></td>
+              <td><span class="count">2000</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </body>
+</html>
