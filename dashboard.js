@@ -24,14 +24,14 @@ const menuSection = () => {
     if (noHover) {
       if (!menu.classList.contains("active") && clickedLink) return;
       menu.classList.toggle("active");
-
-      document.onclick = () => {
-        menu.classList.remove("active");
-        document.onclick = null;
-      };
+      document.addEventListener("click", collapsMenu);
     } else {
+      collapsMenu();
+    }
+
+    function collapsMenu() {
       menu.classList.remove("active");
-      document.onclick = null;
+      document.removeEventListener("click", collapsMenu);
     }
   }
 };
