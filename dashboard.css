@@ -13,8 +13,8 @@
   --danger-color: #a00;
 
   /* BORDERS */
-  --border-radius-s: 6px;
   --border-radius-m: 8px;
+  --border-radius-s: 6px;
 
   /* TRANSITIONS */
   --transition-duration: 0.3s;
@@ -35,6 +35,7 @@
   margin: 0;
   padding: 0;
   color: var(--text-color);
+  box-sizing: border-box;
 }
 
 body {
@@ -51,15 +52,6 @@ ul {
   list-style: none;
 }
 
-/* COMMON EFFECTS */
-.menu li:not(.profile) > a.active,
-.menu li:not(.profile) > a:hover,
-.content .data-info .box:hover,
-.content > table td:hover {
-  background-color: var(--secondary-color);
-  cursor: pointer;
-}
-
 /* ======================== [ MAIN ] ======================== */
 main {
   display: flex;
@@ -70,15 +62,11 @@ main {
   background-color: var(--bg-color-2);
   position: sticky;
   top: 0;
-  width: clamp(45px, 6vw, 60px);
   height: 100vh;
+  flex-basis: clamp(67px, 10vw, 100px);
   padding: var(--padding-l);
   overflow: hidden;
-  transition: width var(--transition-duration);
-}
-
-.menu:hover {
-  width: clamp(320px, 38vw, 380px);
+  transition: flex-basis var(--transition-duration);
 }
 
 .menu > ul {
@@ -86,12 +74,19 @@ main {
   position: relative;
 }
 
-.menu li:not(.profile) > a {
-  padding: var(--padding-m);
-  margin: 10px 0;
-  border-radius: var(--border-radius-m);
+.menu li > a {
   display: flex;
   align-items: center;
+  border-radius: var(--border-radius-m);
+}
+
+.menu li > a.active {
+  background-color: var(--secondary-color);
+}
+
+.menu li:not(.profile) > a {
+  margin: 10px 0;
+  padding: var(--padding-m);
   column-gap: var(--font-size-xl);
 }
 
@@ -100,10 +95,8 @@ main {
 }
 
 .menu .profile > a {
-  display: flex;
-  align-items: center;
-  column-gap: var(--font-size-l);
   margin-bottom: 20px;
+  column-gap: var(--font-size-l);
 }
 
 .menu .profile .img-box {
@@ -135,7 +128,7 @@ main {
 
 /* =================== [ CONTENT SECTION ] =================== */
 .content {
-  width: 100%;
+  flex-basis: 100%;
   margin: 10px;
 }
 
@@ -210,4 +203,55 @@ main {
 .content > table .count {
   background-color: var(--warning-color);
   color: #000000;
+}
+
+/* =================== [ MEDIA QUERIES ] =================== */
+/* DEVICES THAT SUPPORT HOVER */
+@media (hover: hover) {
+  .menu:hover {
+    flex-basis: clamp(350px, 40vw, 400px);
+  }
+
+  .menu li > a:hover,
+  .content .data-info .box:hover,
+  .content > table td:hover {
+    background-color: var(--secondary-color);
+    cursor: pointer;
+  }
+}
+
+/* DEVICES THAT DON'T SUPPORT HOVER */
+@media (hover: none) {
+  .menu.active {
+    flex-basis: clamp(350px, 40vw, 400px);
+  }
+}
+
+/* BREAKPOINTS */
+@media (max-width: 576px) {
+  .menu {
+    position: fixed;
+    width: clamp(56px, 10vw, 100px);
+    transition: width var(--transition-duration);
+  }
+
+  .content {
+    margin-inline-start: calc(clamp(56px, 10vw, 100px) + 10px);
+  }
+
+  .content > table {
+    border-spacing: 7px;
+  }
+}
+
+@media (max-width: 576px) and (hover: hover) {
+  .menu:hover {
+    width: 220px;
+  }
+}
+
+@media (max-width: 576px) and (hover: none) {
+  .menu.active {
+    width: 220px;
+  }
 }
