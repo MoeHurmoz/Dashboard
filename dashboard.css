@@ -62,30 +62,30 @@ main {
   background-color: var(--bg-color-2);
   position: sticky;
   top: 0;
-  height: 100vh;
+  height: 100dvh;
   flex-basis: clamp(67px, 10vw, 100px);
   padding: var(--padding-l);
   overflow: hidden;
+  overflow-y: auto;
   transition: flex-basis var(--transition-duration);
 }
 
 .menu > ul {
   height: 100%;
-  position: relative;
+  display: grid;
+  grid-template-rows: repeat(8, min-content);
+  gap: 10px;
 }
 
 .menu li > a {
   display: flex;
   align-items: center;
   border-radius: var(--border-radius-m);
-}
-
-.menu li > a.active {
-  background-color: var(--secondary-color);
+  width: clamp(36px, 5.5vw, 55px);
+  transition: width var(--transition-duration);
 }
 
 .menu li:not(.profile) > a {
-  margin: 10px 0;
   padding: var(--padding-m);
   column-gap: var(--font-size-xl);
 }
@@ -95,7 +95,7 @@ main {
 }
 
 .menu .profile > a {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   column-gap: var(--font-size-l);
 }
 
@@ -112,14 +112,17 @@ main {
   width: 100%;
 }
 
-.menu .log-out {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+.menu li:last-of-type {
+  align-self: flex-end;
+  margin-bottom: 10px;
 }
 
-.menu .log-out > a {
+.menu li:last-of-type > a {
   background-color: var(--danger-color);
+}
+
+.menu li > a.active {
+  background-color: var(--secondary-color);
 }
 
 .menu li > a > i {
@@ -212,6 +215,10 @@ main {
     flex-basis: clamp(350px, 40vw, 400px);
   }
 
+  .menu:hover li > a {
+    width: 100%;
+  }
+
   .menu li > a:hover,
   .content .data-info .box:hover,
   .content > table td:hover {
@@ -224,6 +231,10 @@ main {
 @media (hover: none) {
   .menu.active {
     flex-basis: clamp(350px, 40vw, 400px);
+  }
+
+  .menu.active li > a {
+    width: 100%;
   }
 }
 
