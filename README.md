@@ -17,8 +17,8 @@ This page is a responsive dashboard designed to display various data and analyti
 
 ## Media Queries
 
-- Devices with hover support will see the sidebar expand on hover.
-- Devices without hover support (like touch devices) will activate the menu expansion on click, and for a better user experience I have made clicking the menu buttons not activate the expansion, but clicking anywhere else in the menu activates the expansion.
+- Devices that support hover will see the sidebar menu expand when hovered.
+- Devices that do not support hover, such as touch devices, the sidebar menu will expand on click. To enhance the user experience, clicking on menu buttons will not trigger the expansion, but clicking elsewhere in the sidebar menu will.
 
 ## Live Demo Server
 
